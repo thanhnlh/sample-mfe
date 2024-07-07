@@ -5,7 +5,10 @@ module.exports = withModuleFederationPlugin({
   name: 'user-feat',
 
   exposes: {
-    './Component': './projects/user-feat/src/app/app.component.ts',
+    './Component': './projects/user-feat/src/app/app.component.ts',    
+
+    // Preferred way: expose corse-grained routes
+    './routes': './projects/user-feat/src/app/modules/modules.routes.ts',
   },
 
   shared: {

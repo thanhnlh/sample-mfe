@@ -2,7 +2,11 @@ import { Routes } from '@angular/router';
 
 export const routes: Routes = [
     {
-        path: 'users',
-        loadComponent: () => import('userFeat/Component').then(m => m.AppComponent)
-     },
+        path: '',
+        loadChildren: () => import('./modules/modules.routes').then(x => x.routes)
+    },     
+    {
+        path: '**',
+        redirectTo: ''
+    },
 ];

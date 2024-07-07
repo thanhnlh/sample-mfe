@@ -2,9 +2,9 @@ const { shareAll, withModuleFederationPlugin } = require('@angular-architects/mo
 
 module.exports = withModuleFederationPlugin({
 
-  remotes: {
-    "userFeat": "http://localhost:4101/remoteEntry.js",    
-  },
+  // remotes: {
+  //   "userFeat": "http://localhost:4101/remoteEntry.js",    
+  // },
 
   shared: {
     ...shareAll({ singleton: true, strictVersion: true, requiredVersion: 'auto' }),

@@ -1,0 +1,15 @@
+/* src/styles.css */
+@use '@angular/material' as mat;
+
+
+.app-modules__content {
+    height: calc(100% - 64px);
+
+    &-lhs {
+        padding: 0px 8px;
+    }
+
+    &-rhs {
+        height: 100%
+    }
+}

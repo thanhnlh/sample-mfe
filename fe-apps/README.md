@@ -50,5 +50,4 @@ Run `npm start:user` to start the user feat project
 
 ## References
 
-## Module Federation with Angular’s Standalone Components
-https://www.angulararchitects.io/en/blog/module-federation-with-angulars-standalone-components/
+[Module Federation with Angular's Standalone Components](https://www.angulararchitects.io/en/blog/module-federation-with-angulars-standalone-components/)
