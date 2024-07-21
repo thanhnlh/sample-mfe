@@ -9,6 +9,7 @@
     "test": "ng test",
     "start:host": "ng serve host",
     "start:user": "ng serve user-feat",
+    "start:product": "ng serve product-feat",
     "run:all": "node node_modules/@angular-architects/module-federation/src/server/mf-dev-server.js"
   },
   "private": true,

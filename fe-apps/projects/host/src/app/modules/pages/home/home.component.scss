@@ -1,0 +1,12 @@
+.home 
+{
+    &__toolbar {
+        display: flex;
+        gap: 12px;
+        justify-content: end;
+    }
+
+    &__content {
+        padding-top: 12px;
+    }
+}

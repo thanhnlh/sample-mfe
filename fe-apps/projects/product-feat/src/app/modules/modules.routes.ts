@@ -7,16 +7,12 @@ export const routes: Routes = [
         component: ModulesComponent,               
         children: [
             {
-                path: 'info',
-                loadChildren: () => import('./info/info.routes').then(x => x.routes)
-            },
-            {
-                path: 'permission',
-                loadChildren: () => import('./permission/permission.routes').then(x => x.routes)
+                path: 'product',
+                loadChildren: () => import('./product/product.routes').then(x => x.routes)
             },
             {
                 path: '**',
-                redirectTo: 'info'
+                redirectTo: 'product'
             }
         ]
     }    
