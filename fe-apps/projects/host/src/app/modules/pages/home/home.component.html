@@ -1,0 +1,69 @@
+<main>
+    <h1 class="mat-headline-medium">Home Page</h1>
+    <p></p>
+    <div class="home__toolbar">
+        <button mat-raised-button (click)="handleRemoveProductFromModule()">Remove Product module</button>
+        <button mat-flat-button (click)="handleAddProductToModule()">Add Product module</button>
+    </div>
+
+    <div class="home__content">
+        <mat-table [dataSource]="this.dynamicRoutesService.routesState()">
+
+            <!-- ID Column -->
+            <ng-container matColumnDef="id">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> ID </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.id}} </mat-cell>
+            </ng-container>
+
+            <!-- Type Column -->
+            <ng-container matColumnDef="type">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Type </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.type}} </mat-cell>
+            </ng-container>
+
+            <!-- Remote Entry Column -->
+            <ng-container matColumnDef="remoteEntry">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Remote Entry </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.remoteEntry}} </mat-cell>
+            </ng-container>
+
+            <!-- Exposed Module Column -->
+            <ng-container matColumnDef="exposedModule">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Exposed Module </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.exposedModule}} </mat-cell>
+            </ng-container>
+
+            <!-- ngModuleName Column -->
+            <ng-container matColumnDef="ngModuleName">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> ngModule Name </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.ngModuleName}} </mat-cell>
+            </ng-container>
+
+            <!-- Display Name Column -->
+            <ng-container matColumnDef="displayName">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Display Name </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.displayName}} </mat-cell>
+            </ng-container>
+
+            <!-- Route Path Column -->
+            <ng-container matColumnDef="routePath">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Route Path </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.routePath}} </mat-cell>
+            </ng-container>
+
+            <!-- Route Path Column -->
+            <ng-container matColumnDef="action">
+                <mat-header-cell *matHeaderCellDef mat-sort-header></mat-header-cell>
+                <mat-cell *matCellDef="let element"> 
+                    <a mat-button [routerLink]="'/' + [element.routePath]">Navigate</a></mat-cell>
+            </ng-container>
+
+
+            <!-- Header and Row Declarations -->
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        </mat-table>
+    </div>
+
+
+</main>

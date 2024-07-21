@@ -26,6 +26,8 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
 
+## How to run
+
 ## Start Host App
 
 Run `npm start:host` to start the host project
@@ -34,10 +36,10 @@ Run `npm start:host` to start the host project
 
 Run `npm start:user` to start the user feat project
 
-
 ## Setup Module Federation Guide
 
 ### Install Angular architect - module federation with webpack
+
 `npm i @angular-architects/module-federation`
 
 ### Add Host App to module federation setup with port 4200
@@ -48,6 +50,10 @@ Run `npm start:user` to start the user feat project
 
 `ng add @angular-architects/module-federation --project user-feat --type remote --port 4101`
 
+### Add Product Feature app to module federation setup with port 4102
+
+`ng add @angular-architects/module-federation --project product-feat --type remote --port 4102`
+
 ## References
 
-[Module Federation with Angular's Standalone Components](https://www.angulararchitects.io/en/blog/module-federation-with-angulars-standalone-components/)
+[Module Federation with Angular&#39;s Standalone Components](https://www.angulararchitects.io/en/blog/module-federation-with-angulars-standalone-components/)
