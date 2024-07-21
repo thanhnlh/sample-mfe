@@ -25,9 +25,9 @@ The frontend application is structured as an Angular workspace using a monorepo.
 
 The backend application is built with Hono.js, an ultra-fast web framework for edge computing. It provides routes with the following methods:
 
-GET: Retrieve routes configuration.
-POST: Add product to routes configuration.
-DELETE: Remove product from routes configuration.
+1. GET: Retrieve routes configuration.
+2. POST: Add product to routes configuration.
+3. DELETE: Remove product from routes configuration.
 
 #### How to run
 
