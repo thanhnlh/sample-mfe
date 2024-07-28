@@ -4,6 +4,8 @@ import { firstValueFrom, Observable } from 'rxjs';
 import { CustomManifest, CustomRemoteConfig } from '../models/mfe-config';
 import { getDynamicRoutes } from '../modules.routes';
 import { Router } from '@angular/router';
+import { environment } from '../../../environments/environment';
+
 
 export interface RouteState {
   routes: CustomRemoteConfig[] | null
@@ -13,8 +15,8 @@ export interface RouteState {
   providedIn: 'root'
 })
 export class DynamicRoutesService {
-  private routesUrl = 'http://localhost:3000/routes'; // Replace with your API endpoint
-
+  private routesUrl =  environment.USING_MOCK_API ? '/api/routes' : `${environment.API_URL}/routes`;
+  
   //private
   #routesState = signal<CustomRemoteConfig[]>([]);
 

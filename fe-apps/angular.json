@@ -17,6 +17,7 @@
 				"build": {
 					"builder": "ngx-build-plus:browser",
 					"options": {
+						
 						"outputPath": "dist/host",
 						"index": "projects/host/src/index.html",
 						"polyfills": [
@@ -29,7 +30,7 @@
 								"glob": "**/*",
 								"input": "projects/host/public",
 								"output": "."
-							}
+							}							  
 						],
 						"styles": [
 							"@angular/material/prebuilt-themes/rose-red.css",
@@ -60,7 +61,13 @@
 						"development": {
 							"optimization": false,
 							"extractLicenses": false,
-							"sourceMap": true
+              "sourceMap": true,
+              "fileReplacements": [
+                {
+                  "replace": "projects/host/src/environments/environment.ts",
+                  "with": "projects/host/src/environments/environment.development.ts"
+                }
+              ]
 						}
 					},
 					"defaultConfiguration": "production"
@@ -148,6 +155,7 @@
 					},
 					"configurations": {
 						"production": {
+							"baseHref": "user-feat",
 							"budgets": [
 								{
 									"type": "initial",
@@ -254,6 +262,7 @@
 					},
 					"configurations": {
 						"production": {
+							"baseHref": "product-feat",
 							"budgets": [
 								{
 									"type": "initial",

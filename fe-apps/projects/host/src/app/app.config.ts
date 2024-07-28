@@ -11,13 +11,14 @@ export const appConfig: ApplicationConfig = {
   providers: [provideZoneChangeDetection({ eventCoalescing: true })
     , provideHttpClient()
     , provideRouter(routes) //<-- Root Route
-    , {
+    , 
+    {
       provide: APP_INITIALIZER,
       useFactory: (dynamicRoutesService: DynamicRoutesService, router: Router) => async () => {
         await dynamicRoutesService.resetRoute(router);
       },
       deps: [DynamicRoutesService, Router],
       multi: true
-    },  // <-- Module Route configured from backend
+    },  // <--  <-- ATTENTION: Module Route configured from backend
     provideAnimationsAsync()]
 };
