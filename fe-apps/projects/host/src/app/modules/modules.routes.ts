@@ -12,8 +12,24 @@ export const routes: Routes = [
         component: ModulesComponent,
         children: [
             { path: '', redirectTo: 'home', pathMatch: "full" }, 
-            { path: 'home', component: HomeComponent }, 
-            { path: '**', component: NotFoundComponent }
+            // { path: 'home', component: HomeComponent }, 
+            // {
+            //     path: 'users',
+            //     loadChildren: () => loadRemoteModule({
+            //         type: 'module',
+            //         remoteEntry: 'https://tomyummfe.z8.web.core.windows.net/user-feat/remoteEntry.js',
+            //         exposedModule: './routes'
+            //     }).then(x => x.routes)
+            // },
+            // {
+            //     path: 'products',
+            //     loadChildren: () => loadRemoteModule({
+            //         type: 'module',
+            //         remoteEntry: 'https://tomyummfe.z8.web.core.windows.net/product-feat/remoteEntry.js',
+            //         exposedModule: './routes'
+            //     }).then(x => x.routes)
+            // }, <-- ATTENTION: Enable this for common client route configuration
+            { path: '**', component: NotFoundComponent },
         ]
     },    
     
