@@ -15,6 +15,7 @@
   "private": true,
   "dependencies": {
     "@angular-architects/module-federation": "^18.0.4",
+    "@angular-architects/module-federation-tools": "^18.0.4",
     "@angular/animations": "^18.0.0",
     "@angular/cdk": "^18.0.6",
     "@angular/common": "^18.0.0",

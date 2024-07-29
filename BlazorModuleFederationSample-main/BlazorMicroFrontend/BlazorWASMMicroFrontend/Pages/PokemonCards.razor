@@ -1,0 +1,35 @@
+﻿@attribute [GenerateModuleFederationComponent]
+@page "/pokemoncards"
+@using BlazorWASMMicroFrontend.Domain;
+@using Blazor.ModuleFederation.Angular;
+
+<link href="@(_configuration!["HostBaseUrl"])_content/Radzen.Blazor/css/material.css" rel="stylesheet" />
+
+<PageTitle>Pokémon</PageTitle>
+
+<h1>Pokémon with Blazor</h1>
+
+@if (_pokedexData == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <RadzenCard>
+        <RadzenDataList WrapItems="true" AllowPaging="true" Data="@_pokedexData.Results"
+                    TItem="Result" PageSize="@_pageSize" PagerHorizontalAlign="HorizontalAlign.Left"
+            ShowPagingSummary="true" Count="@_totalRecords" LoadData="@LoadDataAsync">
+            <Template Context="pokemon">
+                <RadzenCard Style="width:300px;">
+                    <div class="d-flex flex-row align-items-center">
+                        <RadzenImage Path="@($"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{pokemon.Id}.png")"
+                            Class="rounded-circle float-start me-3" Style="width: 80px; height: 80px;" />
+                        <div>
+                            <h4 class="mb-0">@(pokemon.Name)</h4>
+                        </div>
+                    </div>
+                </RadzenCard>
+            </Template>
+        </RadzenDataList>
+    </RadzenCard>
+}

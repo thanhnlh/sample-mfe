@@ -1,0 +1,34 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
+
+	<PropertyGroup>
+		<TargetFramework>net7.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Blazor.ModuleFederation.Angular" Version="0.1.3" />
+		<PackageReference Include="Microsoft.AspNetCore.Components.CustomElements" Version="7.0.0-preview.6.22330.3" />
+		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="7.0.0" />
+		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="7.0.0" PrivateAssets="all" />
+		<PackageReference Include="Radzen.Blazor" Version="4.3.2" />
+		<PackageReference Include="Refit" Version="6.3.2" />
+	</ItemGroup>
+
+	<PropertyGroup>
+		<ModuleFederationName>blazormodule</ModuleFederationName>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)' == 'DEBUG'">
+		<MicroFrontendBaseUrl>http://localhost:5289/</MicroFrontendBaseUrl>
+		<BuildModuleFederationScript>False</BuildModuleFederationScript>
+		<IsProduction>False</IsProduction>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)' == 'RELEASE'">
+		<MicroFrontendBaseUrl>http://localhost:8080/</MicroFrontendBaseUrl>
+		<BuildModuleFederationScript>True</BuildModuleFederationScript>
+		<IsProduction>True</IsProduction>
+	</PropertyGroup>
+	
+</Project>

@@ -1,0 +1,39 @@
+﻿@attribute [GenerateModuleFederationComponent]
+@page "/pokemongrid"
+@using BlazorWASMMicroFrontend.Domain;
+@using Blazor.ModuleFederation.Angular;
+
+<link href="@(_configuration!["HostBaseUrl"])_content/Radzen.Blazor/css/material.css" rel="stylesheet" />
+
+<PageTitle>Pokémon</PageTitle>
+
+<h1>Pokémon with Blazor</h1>
+
+@if (_pokedexData == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <RadzenCard>
+        <RadzenDataList WrapItems="true" AllowPaging="true" Data="@_pokedexData.Results"
+                    TItem="Result" PageSize="@_pageSize" PagerHorizontalAlign="HorizontalAlign.Left"
+            ShowPagingSummary="true" Count="@_totalRecords" LoadData="@LoadDataAsync">
+            <Template Context="pokemon">
+                <RadzenCard Style="width: 100%; padding: 0; overflow: hidden;">
+                    <div class="container">
+                        <div class="row" style="margin-left: calc(var(--bs-gutter-x) * -1); margin-right: calc(var(--bs-gutter-x) * -1)">
+                            <div class="col-lg-4 p-3">
+                                <RadzenImage Path="@($"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{pokemon.Id}.png")" Style="height: 180px;">@(pokemon.Name)</RadzenImage>
+                            </div>
+                            <div class="col-lg-8 p-3">
+                                <RadzenText TextStyle="TextStyle.H6" TagName="TagName.H5" class="mb-0">Name</RadzenText>
+                                <RadzenText TextStyle="TextStyle.Body2" class="mb-sm-2 mb-lg-0">@(pokemon.Name)</RadzenText>
+                            </div>
+                        </div>
+                    </div>
+                </RadzenCard>
+            </Template>
+        </RadzenDataList>
+    </RadzenCard>
+}

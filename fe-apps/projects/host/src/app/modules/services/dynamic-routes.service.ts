@@ -60,19 +60,27 @@ export class DynamicRoutesService {
   }
 
   
-  async resetRoute (router: Router) {
-    this.getRoutes().then(remoteConfigs => {            
-      if(remoteConfigs)
-      {
-        const config = this.mapToCustomManifest(remoteConfigs);
-        const routes = getDynamicRoutes(config);
-        router.resetConfig(routes);
-      }
-      else
-      {
-        console.error("ApplicationConfig failed to APP_INITIALIZER -  remoteConfigs return null")
-      }          
-    });
+  async resetRoute (router: Router, server: boolean = true) {
+    if(server)
+    {
+      this.getRoutes().then(remoteConfigs => {            
+        if(remoteConfigs)
+        {        
+          const routes = getDynamicRoutes(this.mapToCustomManifest(remoteConfigs));
+          router.resetConfig(routes);
+        }
+        else
+        {
+          console.error("ApplicationConfig failed to APP_INITIALIZER -  remoteConfigs return null")
+        }          
+      });
+    }
+    else
+    {
+      const routes = getDynamicRoutes(null);
+      router.resetConfig(routes);
+    }
+    
   }
  
 }

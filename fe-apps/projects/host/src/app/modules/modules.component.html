@@ -3,12 +3,18 @@
 </mat-toolbar>
 <mat-sidenav-container class="app-modules__content">
     <mat-sidenav mode="side" opened class="app-modules__content-lhs">
-        <mat-nav-list>
+        <mat-nav-list>            
             <mat-list-item routerLink="">Home</mat-list-item>
-            <mat-list-item routerLink="users">Users</mat-list-item>
-            <mat-list-item routerLink="products">Products</mat-list-item>
+            @for (item of this.dynamicRoutesService.routesState(); track item){
+                <mat-list-item [routerLink]="item.routePath">{{item.displayName}}</mat-list-item>
+            }
+            <mat-list-item routerLink="orders">Orders</mat-list-item>
+            <mat-list-item routerLink="pokemons">Pokemon</mat-list-item>  
+            <mat-list-item routerLink="pokemonsa">pokemons-2</mat-list-item>  
+                    
         </mat-nav-list>
     </mat-sidenav>
+
 
     <mat-sidenav-content>
         <mat-card appearance="outlined" class="app-modules__content-rhs">

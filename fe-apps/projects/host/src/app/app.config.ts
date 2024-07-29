@@ -15,7 +15,7 @@ export const appConfig: ApplicationConfig = {
     {
       provide: APP_INITIALIZER,
       useFactory: (dynamicRoutesService: DynamicRoutesService, router: Router) => async () => {
-        await dynamicRoutesService.resetRoute(router);
+        await dynamicRoutesService.resetRoute(router, true);
       },
       deps: [DynamicRoutesService, Router],
       multi: true
