@@ -10,11 +10,12 @@
     "start:host": "ng serve host",
     "start:user": "ng serve user-feat",
     "start:product": "ng serve product-feat",
-    "run:all": "node node_modules/@angular-architects/module-federation/src/server/mf-dev-server.js"
+    "all": "node node_modules/@angular-architects/module-federation/src/server/mf-dev-server.js"
   },
   "private": true,
   "dependencies": {
     "@angular-architects/module-federation": "^18.0.4",
+    "@angular-architects/module-federation-tools": "^18.0.4",
     "@angular/animations": "^18.2.4",
     "@angular/cdk": "^18.2.4",
     "@angular/common": "^18.2.4",
