@@ -3,11 +3,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
-  selector: 'app-list',
-  standalone: true,
-  imports: [MatButtonModule],
-  templateUrl: './list.component.html',
-  styleUrl: './list.component.scss'
+    selector: 'app-list',
+    imports: [MatButtonModule],
+    templateUrl: './list.component.html',
+    styleUrl: './list.component.scss'
 })
 export class ListComponent {
   private router = inject(Router)

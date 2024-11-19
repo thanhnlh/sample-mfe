@@ -20,7 +20,6 @@ const MATT_MODULES = [
 ];
 @Component({
     selector: 'app-modules',
-    standalone: true,
     providers: [],
     templateUrl: './modules.component.html',
     styleUrl: './modules.component.scss',
