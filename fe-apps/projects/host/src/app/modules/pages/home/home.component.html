@@ -1,5 +1,5 @@
 <main>
-    <h1 class="mat-headline-medium">Home Page</h1>
+    <h1 class="mat-headline-medium">Feature Management</h1>
     <p></p>
     <div class="home__toolbar">
         <button mat-raised-button (click)="handleRemoveProductFromModule()">Remove Product module</button>
@@ -54,7 +54,7 @@
             <!-- Route Path Column -->
             <ng-container matColumnDef="action">
                 <mat-header-cell *matHeaderCellDef mat-sort-header></mat-header-cell>
-                <mat-cell *matCellDef="let element"> 
+                <mat-cell *matCellDef="let element">
                     <a mat-button [routerLink]="'/' + [element.routePath]">Navigate</a></mat-cell>
             </ng-container>
 
