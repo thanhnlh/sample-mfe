@@ -6,11 +6,10 @@ import { Router, RouterLink } from '@angular/router';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 
 @Component({
-  selector: 'app-home',
-  standalone: true,
-  imports: [CommonModule, MatButtonModule, MatTableModule, RouterLink],
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.scss'
+    selector: 'app-home',
+    imports: [CommonModule, MatButtonModule, MatTableModule, RouterLink],
+    templateUrl: './home.component.html',
+    styleUrl: './home.component.scss'
 })
 export class HomeComponent {
   readonly dynamicRoutesService = inject(DynamicRoutesService);
