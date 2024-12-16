@@ -16,6 +16,7 @@
   "dependencies": {
     "@angular-architects/module-federation": "^18.0.6",
     "@angular-architects/module-federation-tools": "^18.0.6",
+    "@angular-builders/custom-webpack": "^19.0.0-beta.0",
     "@angular/animations": "^19.0.4",
     "@angular/cdk": "^19.0.3",
     "@angular/common": "^19.0.4",
