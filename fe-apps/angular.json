@@ -56,10 +56,7 @@
 									"maximumError": "4kB"
 								}
 							],
-							"outputHashing": "all",
-							"customWebpackConfig": {
-								"path": "projects/host/webpack.prod.config.js"
-							}
+							"outputHashing": "all"
 						},
 						"development": {
 							"optimization": false,
@@ -79,10 +76,7 @@
 					"builder": "@angular-builders/custom-webpack:dev-server",
 					"configurations": {
 						"production": {
-							"buildTarget": "host:build:production",
-							"customWebpackConfig": {
-								"path": "projects/host/webpack.prod.config.js"
-							}
+							"buildTarget": "host:build:production"
 						},
 						"development": {
 							"buildTarget": "host:build:development"
@@ -91,10 +85,7 @@
 					"defaultConfiguration": "development",
 					"options": {
 						"port": 4200,
-						"publicHost": "http://localhost:4200",
-						"customWebpackConfig": {
-							"path": "projects/host/webpack.config.js"
-						}
+						"publicHost": "http://localhost:4200"
 					}
 				},
 				"extract-i18n": {
@@ -177,15 +168,15 @@
 									"maximumError": "4kB"
 								}
 							],
-							"outputHashing": "all",
-							"customWebpackConfig": {
-								"path": "projects/user-feat/webpack.prod.config.js"
-							}
+							"outputHashing": "all"
 						},
 						"development": {
+							"buildOptimizer": false,
 							"optimization": false,
+							"vendorChunk": true,
 							"extractLicenses": false,
-							"sourceMap": true
+							"sourceMap": true,
+							"namedChunks": true
 						}
 					},
 					"defaultConfiguration": "production"
@@ -194,10 +185,7 @@
 					"builder": "@angular-builders/custom-webpack:dev-server",
 					"configurations": {
 						"production": {
-							"buildTarget": "user-feat:build:production",
-							"customWebpackConfig": {
-								"path": "projects/user-feat/webpack.prod.config.js"
-							}
+							"buildTarget": "user-feat:build:production"
 						},
 						"development": {
 							"buildTarget": "user-feat:build:development"
@@ -206,10 +194,7 @@
 					"defaultConfiguration": "development",
 					"options": {
 						"port": 4101,
-						"publicHost": "http://localhost:4101",
-						"customWebpackConfig": {
-							"path": "projects/user-feat/webpack.config.js"
-						}
+						"publicHost": "http://localhost:4101"
 					}
 				},
 				"extract-i18n": {
@@ -273,7 +258,7 @@
 						"scripts": [],
 						"main": "projects/product-feat/src/main.ts",
 						"customWebpackConfig": {
-							"path": "projects/product-feat/webpack.config.js"
+							"path": "projects/product-feat/webpack.config.ts"
 						},
 						"commonChunk": false
 					},
@@ -292,15 +277,15 @@
 									"maximumError": "4kB"
 								}
 							],
-							"outputHashing": "all",
-							"customWebpackConfig": {
-								"path": "projects/product-feat/webpack.prod.config.js"
-							}
+							"outputHashing": "all"
 						},
 						"development": {
+							"buildOptimizer": false,
 							"optimization": false,
+							"vendorChunk": true,
 							"extractLicenses": false,
-							"sourceMap": true
+							"sourceMap": true,
+							"namedChunks": true
 						}
 					},
 					"defaultConfiguration": "production"
@@ -309,10 +294,7 @@
 					"builder": "@angular-builders/custom-webpack:dev-server",
 					"configurations": {
 						"production": {
-							"buildTarget": "product-feat:build:production",
-							"customWebpackConfig": {
-								"path": "projects/product-feat/webpack.prod.config.js"
-							}
+							"buildTarget": "product-feat:build:production"
 						},
 						"development": {
 							"buildTarget": "product-feat:build:development"
@@ -321,10 +303,7 @@
 					"defaultConfiguration": "development",
 					"options": {
 						"port": 4102,
-						"publicHost": "http://localhost:4102",
-						"customWebpackConfig": {
-							"path": "projects/product-feat/webpack.config.js"
-						}
+						"publicHost": "http://localhost:4102"
 					}
 				},
 				"extract-i18n": {
