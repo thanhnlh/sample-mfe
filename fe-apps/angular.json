@@ -15,9 +15,8 @@
 			"prefix": "app",
 			"architect": {
 				"build": {
-					"builder": "ngx-build-plus:browser",
+					"builder": "@angular-builders/custom-webpack:browser",
 					"options": {
-						
 						"outputPath": "dist/host",
 						"index": "projects/host/src/index.html",
 						"polyfills": [
@@ -30,7 +29,7 @@
 								"glob": "**/*",
 								"input": "projects/host/public",
 								"output": "."
-							}							  
+							}
 						],
 						"styles": [
 							"@angular/material/prebuilt-themes/rose-red.css",
@@ -38,7 +37,9 @@
 						],
 						"scripts": [],
 						"main": "projects/host/src/main.ts",
-						"extraWebpackConfig": "projects/host/webpack.config.js",
+						"customWebpackConfig": {
+							"path": "projects/host/webpack.config.js"
+						},
 						"commonChunk": false
 					},
 					"configurations": {
@@ -55,29 +56,27 @@
 									"maximumError": "4kB"
 								}
 							],
-							"outputHashing": "all",
-							"extraWebpackConfig": "projects/host/webpack.prod.config.js"
+							"outputHashing": "all"
 						},
 						"development": {
 							"optimization": false,
 							"extractLicenses": false,
-              "sourceMap": true,
-              "fileReplacements": [
-                {
-                  "replace": "projects/host/src/environments/environment.ts",
-                  "with": "projects/host/src/environments/environment.development.ts"
-                }
-              ]
+							"sourceMap": true,
+							"fileReplacements": [
+								{
+									"replace": "projects/host/src/environments/environment.ts",
+									"with": "projects/host/src/environments/environment.development.ts"
+								}
+							]
 						}
 					},
 					"defaultConfiguration": "production"
 				},
 				"serve": {
-					"builder": "ngx-build-plus:dev-server",
+					"builder": "@angular-builders/custom-webpack:dev-server",
 					"configurations": {
 						"production": {
-							"buildTarget": "host:build:production",
-							"extraWebpackConfig": "projects/host/webpack.prod.config.js"
+							"buildTarget": "host:build:production"
 						},
 						"development": {
 							"buildTarget": "host:build:development"
@@ -86,8 +85,7 @@
 					"defaultConfiguration": "development",
 					"options": {
 						"port": 4200,
-						"publicHost": "http://localhost:4200",
-						"extraWebpackConfig": "projects/host/webpack.config.js"
+						"publicHost": "http://localhost:4200"
 					}
 				},
 				"extract-i18n": {
@@ -128,7 +126,7 @@
 			"prefix": "app",
 			"architect": {
 				"build": {
-					"builder": "ngx-build-plus:browser",
+					"builder": "@angular-builders/custom-webpack:browser",
 					"options": {
 						"outputPath": "dist/user-feat",
 						"index": "projects/user-feat/src/index.html",
@@ -150,7 +148,9 @@
 						],
 						"scripts": [],
 						"main": "projects/user-feat/src/main.ts",
-						"extraWebpackConfig": "projects/user-feat/webpack.config.js",
+						"customWebpackConfig": {
+							"path": "projects/user-feat/webpack.config.js"
+						},
 						"commonChunk": false
 					},
 					"configurations": {
@@ -168,23 +168,24 @@
 									"maximumError": "4kB"
 								}
 							],
-							"outputHashing": "all",
-							"extraWebpackConfig": "projects/user-feat/webpack.prod.config.js"
+							"outputHashing": "all"
 						},
 						"development": {
+							"buildOptimizer": false,
 							"optimization": false,
+							"vendorChunk": true,
 							"extractLicenses": false,
-							"sourceMap": true
+							"sourceMap": true,
+							"namedChunks": true
 						}
 					},
 					"defaultConfiguration": "production"
 				},
 				"serve": {
-					"builder": "ngx-build-plus:dev-server",
+					"builder": "@angular-builders/custom-webpack:dev-server",
 					"configurations": {
 						"production": {
-							"buildTarget": "user-feat:build:production",
-							"extraWebpackConfig": "projects/user-feat/webpack.prod.config.js"
+							"buildTarget": "user-feat:build:production"
 						},
 						"development": {
 							"buildTarget": "user-feat:build:development"
@@ -193,8 +194,7 @@
 					"defaultConfiguration": "development",
 					"options": {
 						"port": 4101,
-						"publicHost": "http://localhost:4101",
-						"extraWebpackConfig": "projects/user-feat/webpack.config.js"
+						"publicHost": "http://localhost:4101"
 					}
 				},
 				"extract-i18n": {
@@ -235,7 +235,7 @@
 			"prefix": "app",
 			"architect": {
 				"build": {
-					"builder": "ngx-build-plus:browser",
+					"builder": "@angular-builders/custom-webpack:browser",
 					"options": {
 						"outputPath": "dist/product-feat",
 						"index": "projects/product-feat/src/index.html",
@@ -257,7 +257,9 @@
 						],
 						"scripts": [],
 						"main": "projects/product-feat/src/main.ts",
-						"extraWebpackConfig": "projects/product-feat/webpack.config.js",
+						"customWebpackConfig": {
+							"path": "projects/product-feat/webpack.config.ts"
+						},
 						"commonChunk": false
 					},
 					"configurations": {
@@ -275,23 +277,24 @@
 									"maximumError": "4kB"
 								}
 							],
-							"outputHashing": "all",
-							"extraWebpackConfig": "projects/product-feat/webpack.prod.config.js"
+							"outputHashing": "all"
 						},
 						"development": {
+							"buildOptimizer": false,
 							"optimization": false,
+							"vendorChunk": true,
 							"extractLicenses": false,
-							"sourceMap": true
+							"sourceMap": true,
+							"namedChunks": true
 						}
 					},
 					"defaultConfiguration": "production"
 				},
 				"serve": {
-					"builder": "ngx-build-plus:dev-server",
+					"builder": "@angular-builders/custom-webpack:dev-server",
 					"configurations": {
 						"production": {
-							"buildTarget": "product-feat:build:production",
-							"extraWebpackConfig": "projects/product-feat/webpack.prod.config.js"
+							"buildTarget": "product-feat:build:production"
 						},
 						"development": {
 							"buildTarget": "product-feat:build:development"
@@ -300,8 +303,7 @@
 					"defaultConfiguration": "development",
 					"options": {
 						"port": 4102,
-						"publicHost": "http://localhost:4102",
-						"extraWebpackConfig": "projects/product-feat/webpack.config.js"
+						"publicHost": "http://localhost:4102"
 					}
 				},
 				"extract-i18n": {
